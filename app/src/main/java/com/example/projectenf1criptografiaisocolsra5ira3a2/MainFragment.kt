@@ -9,6 +9,8 @@ import android.widget.Toast
 import com.example.projectenf1criptografiaisocolsra5ira3a2.databinding.FragmentMainBinding
 import io.socket.client.IO;
 import io.socket.client.Socket;
+import org.json.JSONObject
+
 class MainFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +28,10 @@ class MainFragment : Fragment() {
 
                 mSocket.emit("registerPlatform", "mobile");
 
-                mSocket.emit("validarCodi",text)
+                val json = JSONObject()
+                json.put("codigo", text)
+
+                mSocket.emit("validarCodigo", json)
 
                 Toast.makeText(context, "codi enviat", Toast.LENGTH_SHORT).show()
 
