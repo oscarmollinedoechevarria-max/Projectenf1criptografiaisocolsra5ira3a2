@@ -20,7 +20,7 @@ class MainFragment : Fragment() {
             try {
                 val text = binding.editTextText.text.toString()
 
-                val mSocket: Socket =IO.socket("http://localhost:3000");
+                val mSocket: Socket = IO.socket("http://192.168.19.215:3000")
 
                 mSocket.connect()
 
