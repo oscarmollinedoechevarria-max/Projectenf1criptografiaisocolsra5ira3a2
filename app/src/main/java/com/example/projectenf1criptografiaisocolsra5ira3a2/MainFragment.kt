@@ -21,23 +21,16 @@ class MainFragment : Fragment() {
     ): View? {
         val binding = FragmentMainBinding.inflate(inflater)
 
-        val toolbar = view?.findViewById<MaterialToolbar>(R.id.topAppBar)
-        (activity as AppCompatActivity).setSupportActionBar(toolbar)
+        val mSocket: Socket = IO.socket("http://192.168.19.215:3000")
 
-        toolbar?.title = "Validador de codi"
-        toolbar?.setTitleTextColor(ContextCompat.getColor(requireContext(), android.R.color.black))
+        mSocket.connect()
+
+        mSocket.emit("registerPlatform", "mobile");
 
 
         binding.button.setOnClickListener {
             try {
                 val text = binding.editTextText.text.toString()
-
-                val mSocket: Socket = IO.socket("http://192.168.19.215:3000")
-
-                mSocket.connect()
-
-                mSocket.emit("registerPlatform", "mobile");
-
                 val json = JSONObject()
                 json.put("codigo", text)
 
