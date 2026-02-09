@@ -7,5 +7,15 @@
     <fragment
         android:id="@+id/mainFragment4"
         android:name="com.example.projectenf1criptografiaisocolsra5ira3a2.MainFragment"
-        android:label="MainFragment" />
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment4_to_reportProblemFragment"
+            app:destination="@id/reportProblemFragment"
+            app:popUpTo="@id/mainFragment4" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportProblemFragment"
+        android:name="com.example.projectenf1criptografiaisocolsra5ira3a2.report.ReportProblemFragment"
+        android:label="fragment_report_problem"
+        tools:layout="@layout/fragment_report_problem" />
 </navigation>

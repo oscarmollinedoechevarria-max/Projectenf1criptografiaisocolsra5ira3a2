@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import com.example.projectenf1criptografiaisocolsra5ira3a2.databinding.FragmentMainBinding
 import com.google.android.material.appbar.MaterialToolbar
 import io.socket.client.IO;
@@ -21,7 +22,11 @@ class MainFragment : Fragment() {
     ): View? {
         val binding = FragmentMainBinding.inflate(inflater)
 
-        val mSocket: Socket = IO.socket("http://192.168.19.215:3000")
+        binding.button2.setOnClickListener {
+            findNavController().navigate(R.id.action_mainFragment4_to_reportProblemFragment)
+        }
+
+        val mSocket: Socket = IO.socket("http://192.168.18.183:3000")
 
         mSocket.connect()
 
