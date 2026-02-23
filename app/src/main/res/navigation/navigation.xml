@@ -17,5 +17,9 @@
         android:id="@+id/reportProblemFragment"
         android:name="com.example.projectenf1criptografiaisocolsra5ira3a2.report.ReportProblemFragment"
         android:label="fragment_report_problem"
-        tools:layout="@layout/fragment_report_problem" />
+        tools:layout="@layout/fragment_report_problem" >
+        <action
+            android:id="@+id/action_reportProblemFragment_to_mainFragment4"
+            app:destination="@id/mainFragment4" />
+    </fragment>
 </navigation>

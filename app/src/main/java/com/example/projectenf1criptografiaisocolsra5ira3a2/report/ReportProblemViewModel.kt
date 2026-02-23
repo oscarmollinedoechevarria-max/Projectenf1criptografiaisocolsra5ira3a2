@@ -51,7 +51,7 @@ class ReportProblemViewModel : ViewModel() {
                             exitosa = ftpClient.storeFile(reportName, fileStream)
                         }
                     } else {
-                        errorMessage = "Archivo local no existe"
+                        errorMessage = "Archivo local no existeix"
                     }
 
                     ftpClient.logout()

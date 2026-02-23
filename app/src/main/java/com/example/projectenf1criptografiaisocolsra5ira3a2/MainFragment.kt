@@ -22,7 +22,7 @@ class MainFragment : Fragment() {
     ): View? {
         val binding = FragmentMainBinding.inflate(inflater)
 
-        binding.button2.setOnClickListener {
+        binding.buttonProblema.setOnClickListener {
             findNavController().navigate(R.id.action_mainFragment4_to_reportProblemFragment)
         }
 
